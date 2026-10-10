@@ -1,0 +1,70 @@
+/* =========================================================
+   文档型页面样式（模型选型 / 工作流节点说明等）
+   用法：在页面里引入本站的 style.css 之后，再引入这个文件。
+   ========================================================= */
+
+.doc { max-width: 1040px; margin: 0 auto; padding: 132px 40px 140px; }
+
+.doc-back { display: inline-block; margin-bottom: 34px; font-size: 14px; color: var(--color-saffron); }
+.doc-back:hover { text-decoration: underline; }
+
+.doc h1 {
+  font-size: clamp(30px, 4.6vw, 52px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+.doc .doc-meta { color: var(--color-ash); font-size: 14px; letter-spacing: 0.03em; }
+
+.doc h2 {
+  font-size: 23px;
+  font-weight: 500;
+  margin: 62px 0 18px;
+  padding-top: 26px;
+  border-top: 1px solid var(--color-line);
+}
+.doc h3 { font-size: 17px; font-weight: 500; color: #d9cbff; margin: 26px 0 8px; }
+
+.doc p { color: var(--color-text-body); font-size: 16px; line-height: 1.9; margin-bottom: 14px; }
+.doc ul { margin: 0 0 18px 22px; }
+.doc li { color: var(--color-text-body); font-size: 16px; line-height: 1.9; margin-bottom: 6px; }
+.doc b, .doc strong { color: #f2f2f2; font-weight: 500; }
+
+.doc .table-wrap { overflow-x: auto; margin: 22px 0 30px; }
+.doc table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 620px; }
+.doc th, .doc td { border: 1px solid var(--color-line); padding: 12px 14px; text-align: left; color: var(--color-silver); vertical-align: top; }
+.doc th { background: rgba(128, 82, 255, 0.12); color: #fff; font-weight: 500; white-space: nowrap; }
+.doc td.num { text-align: center; color: #ffcb73; }
+.doc tr.best td { background: rgba(128, 82, 255, 0.10); color: #fff; }
+
+.doc .callout { border-left: 2px solid var(--color-iris); padding: 4px 0 4px 20px; margin: 26px 0; }
+.doc .callout p { margin-bottom: 8px; }
+
+.doc figure { margin: 26px 0; }
+.doc figure img { width: 100%; border: 1px solid var(--color-line); border-radius: 12px; display: block; }
+.doc figcaption { font-size: 13px; color: var(--color-ash); margin-top: 10px; line-height: 1.8; }
+
+.doc .node-tag {
+  display: inline-block;
+  font-size: 12px;
+  color: #d0bcff;
+  border: 1px solid #393042;
+  background: #15101f;
+  border-radius: 999px;
+  padding: 4px 10px;
+  margin-bottom: 10px;
+}
+
+.doc .foot {
+  margin-top: 70px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-line);
+  color: var(--color-ash);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+@media (max-width: 860px) {
+  .doc { padding: 104px 24px 100px; }
+}

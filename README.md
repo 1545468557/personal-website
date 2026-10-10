@@ -123,13 +123,18 @@ python3 -m http.server 8000
 
 ---
 
-## 附：站内链接页
+## 附：站内链接页与截图
+
+案例 01 里用到的两张平台截图在 `assets/img/`：`platform-ai-portrait-form.png`（提交入口表单）、
+`platform-task-list.png`（任务列表，已裁掉顶栏内部提示与账号、上传人姓名打码）。
+文档型页面共用 `assets/css/doc.css`。
 
 | 文件 | 内容 | 入口 |
 | --- | --- | --- |
 | `workflows/youth-portrait-workflow.html` | 年轻化人像工作流（32 节点 / 40 连线，可点节点看参数、可下载 JSON） | 案例 01 与「工作经历」第一张卡 |
 | `workflows/face-mask-workflow.html` | Mask 工作流（10 节点 / 12 连线：SAM2 → 裁脸 → MorphFace → 合成遮罩 → ProRes） | 同上 |
 | `workflows/model-selection.html` | 年轻化底模模型选型（6 个候选模型、5 维加权评分、最终结论） | 同上 |
+| `workflows/portrait-workflow-nodes.html` | 人像美化工作流节点说明（9 个关键节点的参数与调参口径） | 同上 |
 
 两个工作流页是自包含的离线展示版，右下角加了「← 返回作品集」回到 `index.html#case-youth`。
 模型选型页是站内页（飞书原文需要登录，访客打不开，所以本地化了一份）。
