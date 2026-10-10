@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="影视剧人物年轻化项目的底模选型：6 个候选模型、5 个评测维度加权评分与最终结论。">
+<title>年轻化底模模型选型 | 周翔</title>
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+  .doc { max-width: 1040px; margin: 0 auto; padding: 132px 40px 140px; }
+  .doc-back { display: inline-block; margin-bottom: 34px; font-size: 14px; color: var(--color-saffron); }
+  .doc-back:hover { text-decoration: underline; }
+  .doc h1 { font-size: clamp(30px, 4.6vw, 52px); font-weight: 400; letter-spacing: -0.04em; line-height: 1.15; margin-bottom: 14px; }
+  .doc .doc-meta { color: var(--color-ash); font-size: 14px; letter-spacing: 0.03em; }
+  .doc h2 { font-size: 23px; font-weight: 500; margin: 62px 0 18px; padding-top: 26px; border-top: 1px solid var(--color-line); }
+  .doc h3 { font-size: 17px; font-weight: 500; color: #d9cbff; margin: 26px 0 8px; }
+  .doc p { color: var(--color-text-body); font-size: 16px; line-height: 1.9; margin-bottom: 14px; }
+  .doc ul { margin: 0 0 18px 22px; }
+  .doc li { color: var(--color-text-body); font-size: 16px; line-height: 1.9; margin-bottom: 6px; }
+  .doc b, .doc strong { color: #f2f2f2; font-weight: 500; }
+  .doc .table-wrap { overflow-x: auto; margin: 22px 0 30px; }
+  .doc table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 620px; }
+  .doc th, .doc td { border: 1px solid var(--color-line); padding: 12px 14px; text-align: left; color: var(--color-silver); }
+  .doc th { background: rgba(128, 82, 255, 0.12); color: #fff; font-weight: 500; white-space: nowrap; }
+  .doc td.num { text-align: center; color: #ffcb73; }
+  .doc tr.best td { background: rgba(128, 82, 255, 0.10); color: #fff; }
+  .doc .callout { border-left: 2px solid var(--color-iris); padding: 4px 0 4px 20px; margin: 26px 0; }
+  .doc .callout p { margin-bottom: 8px; }
+  .doc .foot { margin-top: 70px; padding-top: 24px; border-top: 1px solid var(--color-line); color: var(--color-ash); font-size: 13px; line-height: 1.9; }
+  @media (max-width: 860px) { .doc { padding: 104px 24px 100px; } }
+</style>
+</head>
+<body>
+
+<canvas id="aurora-canvas" aria-hidden="true"></canvas>
+<div class="bg-glow" aria-hidden="true"></div>
+<canvas id="rain-canvas" aria-hidden="true"></canvas>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<div class="site">
+  <main class="doc">
+    <a class="doc-back" href="../index.html#case-youth">← 返回作品集 / 影视剧人物年轻化</a>
+
+    <span class="eyebrow">Method / 模型选型</span>
+    <h1>年轻化底模模型选型</h1>
+    <p class="doc-meta">影视剧人物年轻化项目 · 2026 · 6 个候选模型 · 5 个评测维度加权评分</p>
+
+    <h2>一、候选模型</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>模型</th><th>机构</th><th>参数</th><th>入选理由</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>FLUX.1 [dev]</td><td>Black Forest Labs</td><td>12B</td><td>当时开源画质天花板，DPG-Bench 83.84 分，AI Arena 开源第一梯队</td></tr>
+          <tr><td>FLUX.1 [schnell]</td><td>Black Forest Labs</td><td>12B</td><td>dev 的快速版，4 步生成，可商用，用于测效率折中方案</td></tr>
+          <tr><td>SDXL</td><td>Stability AI</td><td>6.6B</td><td>生态最成熟，ControlNet / LoRA 资源最多，行业基准线</td></tr>
+          <tr><td>SD3.5 Large</td><td>Stability AI</td><td>8B</td><td>SDXL 升级版，MMDiT 架构，画质有提升</td></tr>
+          <tr><td>Qwen-Image</td><td>阿里</td><td>20B</td><td>国产新势力，DPG-Bench 88.32 分超 FLUX，中文支持好</td></tr>
+          <tr><td>HunyuanImage</td><td>腾讯</td><td>—</td><td>国产开源，中文提示词理解好，国内项目常用</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>二、评测维度与权重</h2>
+
+    <h3>1. 人像质量（权重最高，30%）</h3>
+    <ul>
+      <li>皮肤质感：能不能保留毛孔、细纹，还是一键磨皮变塑料脸</li>
+      <li>细节还原：发丝、睫毛、皮肤纹理的清晰度</li>
+      <li>4K 分辨率下的稳定性：放大后有没有糊、有没有 AI 伪影</li>
+      <li><b>测试方法：</b>用同一段 4K 视频的正面特写帧，跑年轻化后 100% 放大对比</li>
+    </ul>
+
+    <h3>2. 提示词遵循（25%）</h3>
+    <ul>
+      <li>能不能精准控制年轻化程度（"减龄到 25 岁"是不是真的 25 岁）</li>
+      <li>能不能保留指定特征（"保留高颧骨""去法令纹但保留酒窝"）</li>
+      <li>复杂提示词的理解能力（多条件叠加时会不会丢条件）</li>
+      <li><b>参考数据：</b>DPG-Bench 与 GenEval 分数，FLUX.1 为 83.84 / 0.78，SDXL 约 76 / 0.62</li>
+    </ul>
+
+    <h3>3. 角色一致性（20%）</h3>
+    <ul>
+      <li>帧间一致性：同一段视频相邻 5 帧，脸是不是同一个人</li>
+      <li>身份保持：年轻化后还认不认得出来是原演员</li>
+      <li>难场景稳定性：侧脸、遮挡、弱光下脸崩不崩</li>
+      <li><b>测试方法：</b>取一段 10 秒连续镜头，抽 20 帧看脸的变化幅度</li>
+    </ul>
+
+    <h3>4. 生态成熟度（15%）</h3>
+    <ul>
+      <li>LoRA 资源：有没有现成的细节增强、人像美化 LoRA</li>
+      <li>ControlNet 支持：线稿、深度图、姿态控制能不能用</li>
+      <li>工具链：ComfyUI 节点、批量处理工具、社区教程</li>
+      <li><b>测试方法：</b>查 Civitai 与 GitHub 的资源数量，实际搭一遍工作流看顺不顺</li>
+    </ul>
+
+    <h3>5. 推理效率（10%）</h3>
+    <ul>
+      <li>单帧生成时间（512×512，20 步）</li>
+      <li>显存占用（能不能批量跑）</li>
+      <li>35 万帧的总耗时估算</li>
+      <li><b>参考：</b>SDXL 最快（6.6B），FLUX 中等（12B），Qwen 最慢（20B）</li>
+    </ul>
+
+    <h2>三、评分结果</h2>
+    <p>10 分制，基于公开 benchmark + 实际测试镜头的综合判断。</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>模型</th><th>人像质量<br>30%</th><th>提示词遵循<br>25%</th><th>角色一致性<br>20%</th><th>生态成熟度<br>15%</th><th>推理效率<br>10%</th><th>加权总分</th></tr>
+        </thead>
+        <tbody>
+          <tr class="best"><td>FLUX.1 [dev]</td><td class="num">9.5</td><td class="num">9.0</td><td class="num">6.5</td><td class="num">7.5</td><td class="num">6.0</td><td class="num">8.2</td></tr>
+          <tr><td>FLUX.1 [schnell]</td><td class="num">8.5</td><td class="num">8.0</td><td class="num">6.5</td><td class="num">7.5</td><td class="num">8.0</td><td class="num">7.8</td></tr>
+          <tr><td>Qwen-Image</td><td class="num">9.0</td><td class="num">8.5</td><td class="num">7.0</td><td class="num">4.0</td><td class="num">4.0</td><td class="num">7.3</td></tr>
+          <tr><td>SD3.5 Large</td><td class="num">7.0</td><td class="num">7.0</td><td class="num">5.5</td><td class="num">5.5</td><td class="num">7.0</td><td class="num">6.6</td></tr>
+          <tr><td>SDXL</td><td class="num">6.0</td><td class="num">6.0</td><td class="num">4.0</td><td class="num">9.5</td><td class="num">9.0</td><td class="num">6.4</td></tr>
+          <tr><td>HunyuanImage</td><td class="num">6.5</td><td class="num">6.5</td><td class="num">6.0</td><td class="num">4.5</td><td class="num">6.5</td><td class="num">6.1</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>四、最终结论</h2>
+    <div class="callout">
+      <p><b>选 FLUX.1 [dev]，但不是无脑选，是有取舍的。</b></p>
+    </div>
+    <ul>
+      <li><b>人像质量与提示词遵循是碾压级优势。</b>这两个维度占 55% 权重，FLUX 都是最高分，影视级 4K 上线必须要这个画质。</li>
+      <li><b>角色一致性是短板，但有解法。</b>原生一致性一般，通过 IP-Adapter（身份保持）+ ControlNet 线稿约束 + Mask 区域限定组合解决，实测帧间脸崩率从 SDXL 的 30% 降到 5% 以下。</li>
+      <li><b>生态够用了。</b>FLUX 的 LoRA 与 ControlNet 生态在下半年爆发，add_detail 等关键 LoRA 已经成熟，虽然不如 SDXL 多但够用。</li>
+      <li><b>效率问题可解。</b>12B 参数单帧约 8–12 秒，通过 Mask 只跑人脸区域（压缩到原图 1/4 面积）+ 批量夜间处理平台，35 万帧可以在排期内完成。</li>
+      <li><b>为什么不选 Qwen-Image：</b>benchmark 分数高，但发布仅 2 个月，LoRA 与 ControlNet 生态几乎空白，工作流搭不起来，风险太高。</li>
+      <li><b>为什么不选 SDXL：</b>生态和效率最好，但人像质量与帧间一致性太差，后期去闪成本远超省下来的推理时间。</li>
+    </ul>
+
+    <p class="foot">
+      口径说明：评分为 10 分制，结合公开 benchmark 与实际测试镜头；权重按项目对"画质优先、可交付"的要求设定。
+      涉及项目内部信息的部分已做脱敏，如需完整原始文档可当面沟通。
+    </p>
+  </main>
+</div>
+
+<button class="fx-toggle" id="fx-toggle" aria-pressed="true">特效：开</button>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

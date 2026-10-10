@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="二维码占位图">
+  <rect width="240" height="240" fill="#0f0f14"/>
+  <g fill="none" stroke="#3a3a46" stroke-width="1">
+    <path d="M0 40h240M0 80h240M0 120h240M0 160h240M0 200h240"/>
+    <path d="M40 0v240M80 0v240M120 0v240M160 0v240M200 0v240"/>
+  </g>
+  <g fill="#8052ff" opacity="0.85">
+    <rect x="24" y="24" width="48" height="48" rx="6"/>
+    <rect x="168" y="24" width="48" height="48" rx="6"/>
+    <rect x="24" y="168" width="48" height="48" rx="6"/>
+  </g>
+  <g fill="#0f0f14">
+    <rect x="36" y="36" width="24" height="24" rx="3"/>
+    <rect x="180" y="36" width="24" height="24" rx="3"/>
+    <rect x="36" y="180" width="24" height="24" rx="3"/>
+  </g>
+  <g fill="#ffb829" opacity="0.75">
+    <rect x="96" y="96" width="16" height="16"/><rect x="128" y="96" width="16" height="16"/>
+    <rect x="96" y="128" width="16" height="16"/><rect x="144" y="128" width="16" height="16"/>
+    <rect x="112" y="160" width="16" height="16"/><rect x="176" y="160" width="16" height="16"/>
+    <rect x="160" y="192" width="16" height="16"/><rect x="96" y="192" width="16" height="16"/>
+  </g>
+  <text x="120" y="230" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="11" fill="#9a9a9a">占位图 · 请替换</text>
+</svg>
