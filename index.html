@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ↓ 替换：搜索引擎/分享卡片上的描述 -->
+<meta name="description" content="周翔，AI 产品经理。腾讯影视剧项目组实习（AI 影视剧人物年轻化），从 AIGC 创作到 Agent 产品搭建，关注找到真实需求，把模型能力变成可用的产品。">
+<title>周翔 | AI 产品经理 · AI 产品落地</title>
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- 背景层：极光光晕 → 静态渐变 → 雨丝 → 鼠标光斑 -->
+<canvas id="aurora-canvas" aria-hidden="true"></canvas>
+<div class="bg-glow" aria-hidden="true"></div>
+<canvas id="rain-canvas" aria-hidden="true"></canvas>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<div class="site">
+
+  <!-- ==================== 顶部导航 ==================== -->
+  <header class="site-header" id="site-header">
+    <nav class="container nav">
+      <a class="brand" href="#top">
+        <span class="brand-name">周翔</span>
+        <span class="brand-role">/ AI 产品经理</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">关于</a></li>
+        <li><a href="#experience">工作经历</a></li>
+        <li><a href="#projects">项目作品</a></li>
+        <li><a href="#opensource">开源项目</a></li>
+        <li><a href="#notes">方法沉淀</a></li>
+        <li><a href="#contact">联系</a></li>
+      </ul>
+
+      <a class="nav-cta" href="#contact">联系我</a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="container" id="top">
+
+    <!-- ==================== 首屏 ==================== -->
+    <section class="hero">
+      <div class="hero-copy">
+        <!-- ↓ 替换：小标签，一般写你的方向 -->
+        <span class="eyebrow">AI 产品 · PORTFOLIO</span>
+
+        <!-- ↓ 替换：主标题。用 <span class="grad"> 包住想强调的词 -->
+        <h1 class="display">把模型能力，<br>变成<span class="grad">能用的产品</span>。</h1>
+
+        <!-- ↓ 替换：一句话自我介绍（3 行以内最好） -->
+        <p class="lead">
+          我是周翔，AI 产品经理。从 AIGC 创作实习到 Agent 产品搭建，
+          从黑客松组队到独立工具开发——我关注的是：找到真实需求，把模型能力变成可用的产品。
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">查看作品</a>
+          <a class="btn btn-ghost" href="#notes">阅读方法沉淀 →</a>
+        </div>
+
+        <dl class="hero-stats">
+          <div><dt>13</dt><dd>个开源项目</dd></div>
+          <div><dt>4</dt><dd>个端到端工作台</dd></div>
+          <div><dt>1</dt><dd>个在线体验工具</dd></div>
+        </dl>
+
+      </div>
+
+      <div class="hero-visual">
+        <canvas id="hero-canvas" aria-label="动态装饰图形"></canvas>
+        <div class="hero-card">
+          <span class="hero-card-label">Now</span>
+          <p>把 AI 产品从想法推到可交付：To B 工作台、AIGC 创作工具与 Personal Agent。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 关于 ==================== -->
+    <section id="about" class="section">
+      <div class="about-grid">
+        <div>
+          <span class="eyebrow">About / 周翔</span>
+          <h2 class="display">先找到真实需求，<br>再把产品做完整。</h2>
+        </div>
+
+        <div class="about-body">
+          <!-- ↓ 替换：2–3 段自我介绍 -->
+          <p>
+            我是周翔，AI 产品经理 / AI Builder，方向集中在 <strong>To B 交付</strong>、<strong>AIGC 创作</strong>
+            与 <strong>Personal Agent</strong>。产品设计与技术实现我都自己下场：从需求拆解、交互设计，
+            到把东西真正跑起来。
+          </p>
+          <p>
+            习惯把想法直接做成能用的东西——13 个开源项目里，既有面向业务交付的工作台，
+            也有能在线体验的小工具。做产品时我更在意：问题是不是真的、链路能不能跑通、
+            交付之后谁来维护。
+          </p>
+
+          <!-- ↓ 替换：技能标签 -->
+          <div class="skill-tags">
+            <span>To B 交付</span>
+            <span>AIGC 创作</span>
+            <span>Personal Agent</span>
+            <span>产品设计</span>
+            <span>技术实现</span>
+            <span>交互原型</span>
+          </div>
+
+          <div class="about-items">
+            <article class="about-item">
+              <h3>产品设计</h3>
+              <p>把模糊诉求拆成可验收的功能与流程，输出交互原型与评审材料。</p>
+            </article>
+            <article class="about-item">
+              <h3>技术实现</h3>
+              <p>Python / JavaScript / Swift 都能上手，把方案从原型推到可运行的工作台。</p>
+            </article>
+            <article class="about-item">
+              <h3>业务交付</h3>
+              <p>面向真实业务场景交付，覆盖需求澄清、知识整理、上线与后续维护。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 工作经历 ==================== -->
+    <section id="experience" class="section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Experience / 工作经历</span>
+          <h2 class="display" id="experience-title">在真实场景里动手</h2>
+        </div>
+        <p>按时间倒序排列。每条都写清楚：负责什么、做了什么判断、最后留下什么结果。</p>
+      </div>
+
+      <div class="timeline">
+        <!-- ↓ 复制一个 .experience-card 就是新增一段经历 -->
+        <article class="experience-card reveal">
+          <div class="experience-top">
+            <div>
+              <h3>腾讯 · 影视剧项目组</h3>
+              <span class="role-label">AI 产品经理实习生 · AIGC 影视剧制作</span>
+            </div>
+            <span class="period">2025.09 — 2026.01</span>
+          </div>
+          <p>
+            与设计团队、算法团队一起，承接影视剧人物年轻化处理，从 0 到 1 走完需求拆解、工作流搭建、
+            效果验证到项目交付。跑通效果之后真正卡住交付的不是"能不能生成"，而是"量太大、人工环节太多"，
+            于是把重心放在产能上。
+          </p>
+          <ul class="bullet-list">
+            <li><b>需求拆解与效果验证：</b>把"年轻化"拆成可执行的处理要求，在 ComfyUI 搭出 32 节点 / 40 连线的工作流
+              （Pose 与 Scribble 双 ControlNet、SkinBeauty / FilmV2 皮肤与影调处理、LoRA、VideoHelperSuite 批量视频处理，
+              保留原音频），先跑出 demo 验证可行性。</li>
+            <li><b>盘点工作量、找到真瓶颈：</b>按原方式逐帧处理，人力成本扛不住项目排期。把每个环节的人工工时摊开，
+              定位到"批量合成"和"逐帧打 mask"两个最费人的点。</li>
+            <li><b>三条线提效：</b>① 达芬奇批量加去背景，把重复合成动作批量化；② 用 AI 自动提取人脸 ID 打 mask
+              （SAM2 自动分割 → 裁剪视频人脸 → MorphFace 人脸变形 → 合成遮罩 → ProRes 合并，10 节点 / 12 连线），
+              替代逐帧手绘；③ 把工作流封装成平台，让非技术同事也能跑，减少对个人操作的依赖。</li>
+            <li><b>模型选型与验收：</b>按人像质量、提示词遵循、角色一致性、生态成熟度、推理效率五个维度加权评分，
+              在 6 个候选底模中选定 FLUX.1 [dev]，并用 IP-Adapter + ControlNet + Mask 区域限定把帧间脸崩率
+              从 30% 压到 5% 以下。</li>
+            <li><b>结果：</b>整体效率提升 200%，全片约 35 万帧在不增加人力的前提下满足项目交付节奏。</li>
+          </ul>
+          <div class="case-metrics">
+            <span>效率 +200%</span>
+            <span>32 节点工作流</span>
+            <span>Mask 链路 10 节点</span>
+            <span>35 万帧</span>
+          </div>
+          <div class="project-links">
+            <a href="workflows/model-selection.html" target="_blank" rel="noopener">模型选型记录 ↗</a>
+            <a href="workflows/youth-portrait-workflow.html" target="_blank" rel="noopener">年轻化人像工作流 ↗</a>
+            <a href="workflows/face-mask-workflow.html" target="_blank" rel="noopener">Mask 工作流 ↗</a>
+          </div>
+        </article>
+
+        <article class="experience-card reveal">
+          <div class="experience-top">
+            <div>
+              <h3>【第二段经历 / 项目实践】</h3>
+              <span class="role-label">【角色】 · 【类型】</span>
+            </div>
+            <span class="period">【2024.09—2025.01】</span>
+          </div>
+          <p>【一段话背景。】</p>
+          <ul class="bullet-list">
+            <li>【关键动作】</li>
+            <li>【结果】</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 项目作品 ==================== -->
+    <section id="projects" class="section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Selected work / 项目作品</span>
+          <h2 class="display" id="projects-title">判断、推进与交付</h2>
+        </div>
+        <p>每个案例都回答三件事：问题是什么、你怎么取舍、最后交付了什么。</p>
+      </div>
+
+      <div class="project-list">
+        <!-- ↓ 复制一个 .project 就是新增一个案例 -->
+        <article class="project reveal" id="case-youth">
+          <div class="project-head">
+            <h3 class="project-title">影视剧人物年轻化 · 从工作流到量产</h3>
+            <span class="project-meta">01 / 腾讯影视剧项目组 · AIGC 影视剧交付 · 2025.09—2026.01</span>
+          </div>
+
+          <div class="project-grid">
+            <div class="project-body">
+              <p>
+                影视剧里主要演员需要做年轻化处理，全片约 35 万帧。效果本身能跑通，但量太大：
+                逐帧人工处理扛不住固定排期，人力成本有限，项目难以如期交付。
+              </p>
+
+              <div class="case-metrics">
+                <span>效率 +200%</span>
+                <span>35 万帧排期</span>
+                <span>帧间脸崩率 30% → 5%</span>
+                <span>32 节点工作流</span>
+              </div>
+
+              <details class="project-detail">
+                <summary>查看我的判断、动作与交付</summary>
+                <div>
+                  <p><b>问题定义：</b>先做单点 demo 把效果验证出来，再盘点真实工作量——瓶颈不在"能不能生成"，
+                    而在"量太大、人工环节太多"。于是把目标从"做一个好效果"改成"把产能做出来"。</p>
+                  <p><b>模型选型：</b>按人像质量 30%、提示词遵循 25%、角色一致性 20%、生态成熟度 15%、
+                    推理效率 10% 五个维度加权，对 6 个候选模型打分（FLUX.1 [dev] 8.2 分最高，高于
+                    FLUX.1 [schnell] 7.8、Qwen-Image 7.3、SDXL 6.4）。选 FLUX.1 [dev] 的同时补它的短板：
+                    用 IP-Adapter 保身份 + ControlNet 线稿约束 + Mask 区域限定，把帧间脸崩率从 SDXL 的
+                    30% 压到 5% 以下。</p>
+                  <p><b>三条提效线：</b>① 达芬奇批量加去背景，把重复的合成动作批量化；
+                    ② 用 AI 自动提取人脸 ID 打 mask（SAM2 自动分割 → 裁剪视频人脸 → MorphFace 人脸变形 →
+                    合成遮罩 → ProRes 合并），替代逐帧手绘；
+                    ③ 把工作流封装成平台，让非技术同事也能跑，减少对个人操作的依赖。</p>
+                  <p><b>结果与复盘：</b>整体效率提升 200%，在不增加人力的前提下满足项目交付节奏。
+                    Mask 只跑人脸区域（压缩到原图 1/4 面积）配合夜间批量处理，35 万帧可以在排期内完成。
+                    复盘：提效的前提是先把效果标准定死，否则省下来的时间会花在返工上。</p>
+                </div>
+              </details>
+
+              <div class="project-links">
+                <a href="workflows/youth-portrait-workflow.html" target="_blank" rel="noopener">年轻化人像工作流（32 节点）↗</a>
+                <a href="workflows/face-mask-workflow.html" target="_blank" rel="noopener">Mask 工作流（10 节点）↗</a>
+                <a href="workflows/model-selection.html" target="_blank" rel="noopener">模型选型记录 ↗</a>
+              </div>
+              <div class="project-links">
+                <span class="project-note">影视剧素材未公开 · 工作流为节点结构展示版</span>
+              </div>
+            </div>
+
+            <div class="project-visual" aria-hidden="true">
+              <span class="visual-index">01</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal" id="case-cineva">
+          <div class="project-head">
+            <h3 class="project-title">Cineva · AI 短片创作 Agent</h3>
+            <span class="project-meta">02 / 独立项目 · AIGC 创作工作台 · 2026</span>
+          </div>
+
+          <div class="project-grid">
+            <div class="project-body">
+              <p>
+                短剧与短视频创作里，"文生视频"基本是黑盒：给出提示词只能等结果，中间过程看不见、改不了，
+                一旦不满意只能重来，返工成本很高。
+              </p>
+
+              <div class="case-metrics">
+                <span>6 阶段流水线</span>
+                <span>全流程可确认 / 可回退</span>
+                <span>MIT 开源</span>
+              </div>
+
+              <details class="project-detail">
+                <summary>查看我的判断、动作与交付</summary>
+                <div>
+                  <p><b>问题定义：</b>不做单点式生成，而是做一条"生产线"——剧本策划 → 角色 / 场景设计 →
+                    分镜规划 → 参考图生成 → 视频生成 → 后期剪辑，每一阶段都产出可查看、可确认、可修改、
+                    可继续生成的中间资产。</p>
+                  <p><b>关键动作：</b>用 Python 打通阶段之间的资产流转与状态管理，前端 Node.js；
+                    模型服务由使用者自带 API Key，仓库不包含任何密钥、会话记录与生成产物；
+                    文档中英双语，以 MIT 协议开源。</p>
+                  <p><b>结果与复盘：</b>【待补：项目目前状态 / 跑通的成片数量 / 你自己最满意或最想改的一点】</p>
+                </div>
+              </details>
+
+              <div class="project-links">
+                <a href="https://github.com/1545468557/cineva" target="_blank" rel="noopener">开源代码 ↗</a>
+              </div>
+            </div>
+
+            <div class="project-visual" aria-hidden="true">
+              <span class="visual-index">02</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal" id="case-faxiaozhi">
+          <div class="project-head">
+            <h3 class="project-title">法小智 · 法律类案研究 Agent</h3>
+            <span class="project-meta">03 / To B · 法律垂直 Agent · 2026</span>
+          </div>
+
+          <div class="project-grid">
+            <div class="project-body">
+              <p>
+                法律检索、类案研究与合同审查的场景里，结论必须可追溯：模型直接给答案不能用于交付，
+                需要证据链、来源标注与人工裁决，还得处理检索源不稳定和配额限制。
+              </p>
+
+              <div class="case-metrics">
+                <span>3 条门禁</span>
+                <span>逐字核验 · 双源印证</span>
+                <span>多源可插拔</span>
+              </div>
+
+              <details class="project-detail">
+                <summary>查看我的判断、动作与交付</summary>
+                <div>
+                  <p><b>问题定义：</b>把"可核验"当成产品底线——逐字核验、双源印证、来源冲突交人工裁决；
+                    主路径从"检索为主"改为"用户自带材料为主、检索为辅"，避免把不确定性包装成结论。</p>
+                  <p><b>关键动作：</b>搭 Harness 内核 + 三条门禁 + 类案研究链路 + 最小验收界面；
+                    补降级矩阵与稳定性实测、重试闭环、本地依据库（法条 / 判例命中复用、逐字核验）；
+                    设计动态追问——每次只问一个关键情况、最多三轮、可跳过，并说明未知情况对结论的限制。</p>
+                  <p><b>结果与复盘：</b>【待补：例如完成的阶段范围（2-1 ~ 2-4）、Word 模板产出、跑通多少份真实材料】</p>
+                </div>
+              </details>
+
+              <div class="project-links">
+                <a href="https://github.com/1545468557/faxiaozhi" target="_blank" rel="noopener">开源代码 ↗</a>
+              </div>
+            </div>
+
+            <div class="project-visual" aria-hidden="true">
+              <span class="visual-index">03</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal" id="case-shoe">
+          <div class="project-head">
+            <h3 class="project-title">款式工场 · 鞋服设计 Agent</h3>
+            <span class="project-meta">04 / To B · 设计流程 Agent · 2026</span>
+          </div>
+
+          <div class="project-grid">
+            <div class="project-body">
+              <p>
+                鞋服企划从需求到打样链路很长：设计要求分散在对话、草图与参考图里，风格方向很难在对齐前收敛，
+                候选方案和判断依据也容易散落，最后打样沟通要靠人反复对齐。
+              </p>
+
+              <div class="case-metrics">
+                <span>5 道人工确认</span>
+                <span>企划 → 打样全链路</span>
+                <span>方案页可下载</span>
+              </div>
+
+              <details class="project-detail">
+                <summary>查看我的判断、动作与交付</summary>
+                <div>
+                  <p><b>问题定义：</b>把流程拆成"需求整理 → 风格方向 → 候选生成 → 单款修改 → 方案页 → 打样沟通资料"，
+                    在关键节点设置人工确认，避免 AI 一路跑到底却没人能拍板。</p>
+                  <p><b>关键动作：</b>对话式收集款式需求，支持上传草图、面料照片与参考图；生成后逐项检查，
+                    图片与检查结果随项目保存；确认一款后进入独立方案页，展示设计依据并可下载图片与首版打样沟通资料；
+                    3D 预览做成可单独接通的服务，不阻塞主链路。</p>
+                  <p><b>结果与复盘：</b>【待补：例如与哪家企业 / 团队一起跑过、迭代了几轮、哪一步最容易被卡住】</p>
+                </div>
+              </details>
+
+              <div class="project-links">
+                <a href="https://github.com/1545468557/shoe-style-agent" target="_blank" rel="noopener">开源代码 ↗</a>
+              </div>
+            </div>
+
+            <div class="project-visual" aria-hidden="true">
+              <span class="visual-index">04</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- ==================== 开源项目 ==================== -->
+    <section id="opensource" class="section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Open source / 开源项目</span>
+          <h2 class="display" id="opensource-title">公开代码与在线体验</h2>
+        </div>
+        <p>都是可以直接点开看代码的项目，覆盖 To B 工作台、AIGC 创作工具与个人效率工具。</p>
+      </div>
+
+      <div class="resource-grid">
+        <!-- ↓ 复制一个 .resource-card 就是新增一个开源项目 -->
+        <a class="resource-card reveal" href="https://github.com/1545468557/cineva" target="_blank" rel="noopener">
+          <h3>Cineva</h3>
+          <p>从灵感到成片的 AI 影视创作工作台，支持剧本、角色、分镜、图像与视频生成（MIT 开源）。</p>
+          <span class="resource-meta"><em>Python</em><em>MIT</em><em>★ 1</em></span>
+        </a>
+
+        <a class="resource-card reveal" href="https://github.com/1545468557/faxiaozhi" target="_blank" rel="noopener">
+          <h3>法小智</h3>
+          <p>法律问答、类案研究、合同审查与法规查找工作台，附交互设计预览。</p>
+          <span class="resource-meta"><em>Python</em><em>To B</em></span>
+        </a>
+
+        <a class="resource-card reveal" href="https://github.com/1545468557/shoe-style-agent" target="_blank" rel="noopener">
+          <h3>鞋服智能设计 Agent</h3>
+          <p>企划 → AI 方向 / 面料 / 版型 / 工艺 → 用料与尺寸 → 打样，含五道人工确认。</p>
+          <span class="resource-meta"><em>Python</em><em>Agent</em></span>
+        </a>
+
+        <a class="resource-card reveal" href="https://github.com/1545468557/personal-office-workbench" target="_blank" rel="noopener">
+          <h3>个人办公工作台</h3>
+          <p>在本机运行的 AI 办公入口：智能助手、文档处理、项目管理、模型对比与定时任务。</p>
+          <span class="resource-meta"><em>Rust</em><em>本地运行</em></span>
+        </a>
+
+        <a class="resource-card reveal" href="https://github.com/1545468557/product-deconstruction-skill" target="_blank" rel="noopener">
+          <h3>产品拆解 Skill</h3>
+          <p>以证据为依据的 AI / 软件产品拆解方法，输出响应式 HTML 报告。</p>
+          <span class="resource-meta"><em>Skill</em><em>HTML 报告</em></span>
+        </a>
+
+        <a class="resource-card reveal" href="https://github.com/1545468557/product-analysis-skill" target="_blank" rel="noopener">
+          <h3>产品分析 Skill</h3>
+          <p>六层产品分析框架：市场、商业、用户、技术、模型与数据。</p>
+          <span class="resource-meta"><em>Skill</em><em>分析框架</em></span>
+        </a>
+
+        <a class="resource-card reveal" href="https://github.com/1545468557/orbit-explorer" target="_blank" rel="noopener">
+          <h3>ORBIT 星际漫游</h3>
+          <p>基于 Three.js 的太阳系、轨道跟随与地球探索可视化。</p>
+          <span class="resource-meta"><em>Three.js</em><em>可视化</em></span>
+        </a>
+
+        <a class="resource-card reveal" href="https://github.com/1545468557/field-command" target="_blank" rel="noopener">
+          <h3>前线指令</h3>
+          <p>开源像素回合制战棋，支持单人对战与局域网联机。</p>
+          <span class="resource-meta"><em>JavaScript</em><em>游戏</em></span>
+        </a>
+
+        <a class="resource-card reveal" href="https://github.com/1545468557/CodexFloat" target="_blank" rel="noopener">
+          <h3>CodexFloat</h3>
+          <p>隐私优先的 macOS 原生助手，查看 Codex 额度、重置活动与任务状态。</p>
+          <span class="resource-meta"><em>Swift</em><em>macOS</em></span>
+        </a>
+
+        <a class="resource-card reveal" href="https://pet-name-studio.vercel.app" target="_blank" rel="noopener">
+          <h3>宠物起名事务所</h3>
+          <p>给猫狗兔鼠鸟起名字的单文件网页工具，可直接在线体验。</p>
+          <span class="resource-meta"><em>HTML/CSS/JS</em><em>在线 Demo ↗</em></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== 方法沉淀 ==================== -->
+    <section id="notes" class="section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Methods / 方法沉淀</span>
+          <h2 class="display" id="notes-title">把做过的事提炼成方法</h2>
+        </div>
+        <p>踩过的坑写成可复用的步骤，下一次遇到同类问题能直接照着做。</p>
+      </div>
+
+      <div class="note-list">
+        <!-- ↓ 复制一个 .note 就是新增一条方法 -->
+        <article class="note reveal">
+          <button class="note-head" aria-expanded="false">
+            <span class="note-index">01</span>
+            <span class="note-title">
+              <strong>从 demo 到产能：提效先盘点人工工时</strong>
+              <em>单点跑通 ≠ 能交付，先找到最费人的环节，再决定在哪一层提效</em>
+            </span>
+            <span class="note-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="note-content">
+            <div>
+              <p><b>步骤：</b>跑通单点 demo → 按镜头 / 任务量盘点每个环节的人工工时 → 把环节归到三层
+                （批处理 / AI 自动化 / 平台化）→ 用交付节奏反推先做哪一层。</p>
+              <p><b>三层杠杆：</b>批处理解决"重复动作"（如达芬奇批量去背景）；AI 自动化解决"逐帧判断"
+                （如自动提取人脸 ID 打 mask）；平台化解决"只有一个人会做"（把工作流封装成平台，让同事也能跑）。</p>
+              <p><b>适用边界：</b>量小、一次性的任务不值得平台化；提效之前必须先固定效果标准，
+                否则省下来的时间会花在返工上。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="note reveal">
+          <button class="note-head" aria-expanded="false">
+            <span class="note-index">02</span>
+            <span class="note-title">
+              <strong>六层产品分析：证据不到位的层标"待验证"</strong>
+              <em>避免只看功能，从市场、商业、用户、技术、模型、数据六层拆产品</em>
+            </span>
+            <span class="note-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="note-content">
+            <div>
+              <p><b>步骤：</b>先收集证据（文档、界面、数据、公开资料）→ 市场 → 商业 → 用户 → 技术 → 模型 →
+                数据，逐层给结论 → 输出可分享的报告。</p>
+              <p><b>核心约束：</b>每一层的结论都要能指回证据；证据不足的层明确标注"待验证"，
+                不拿推测当结论。</p>
+              <p><b>适用边界：</b>适合做竞品与自有产品的结构化拆解，不适合用来做需要快速拍板的决策。</p>
+              <div class="project-links">
+                <a href="https://github.com/1545468557/product-analysis-skill" target="_blank" rel="noopener">查看六层分析 Skill ↗</a>
+                <a href="https://github.com/1545468557/product-deconstruction-skill" target="_blank" rel="noopener">产品拆解 Skill ↗</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="note reveal">
+          <button class="note-head" aria-expanded="false">
+            <span class="note-index">03</span>
+            <span class="note-title">
+              <strong>【方法名称】</strong>
+              <em>【一句话说明】</em>
+            </span>
+            <span class="note-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="note-content">
+            <div>
+              <p>【展开后的内容。】</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="note reveal">
+          <button class="note-head" aria-expanded="false">
+            <span class="note-index">04</span>
+            <span class="note-title">
+              <strong>【方法名称】</strong>
+              <em>【一句话说明】</em>
+            </span>
+            <span class="note-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="note-content">
+            <div>
+              <p>【展开后的内容。】</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 联系 ==================== -->
+    <section id="contact" class="section contact-section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2 class="display">聊聊你的场景</h2>
+        </div>
+        <p>欢迎交流 AI 产品、Agent 落地与项目合作，邮件最快回复。</p>
+      </div>
+
+      <div class="contact-panel">
+        <div class="contact-info">
+          <a class="contact-line" href="mailto:jageya89@gmail.com">jageya89@gmail.com</a>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:jageya89@gmail.com">邮件联系</a>
+            <a class="btn btn-ghost" href="https://github.com/1545468557" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+
+        <figure class="qr-card">
+          <!-- ↓ 替换：把你的二维码图片放到 assets/img/ 下，并改这里的路径 -->
+          <img src="assets/img/qr-placeholder.svg" alt="微信二维码（占位图，请替换）">
+          <figcaption>微信扫码添加好友</figcaption>
+        </figure>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="year">2026</span> 周翔</span>
+      <span class="footer-note">学习 · 实践 · 记录</span>
+    </div>
+  </footer>
+
+</div>
+
+<button class="back-top" id="back-top" aria-label="回到顶部">↑</button>
+<button class="fx-toggle" id="fx-toggle" aria-pressed="true">特效：开</button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
