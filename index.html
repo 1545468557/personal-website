@@ -236,10 +236,54 @@
 
       <div class="project-list">
         <!-- ↓ 复制一个 .project 就是新增一个案例 -->
+        <!-- 展示型案例：大图 + 一句话 + 胶囊 + 折叠详情 -->
+        <article class="project project--feature reveal" id="case-archive">
+          <div class="feature-bg" aria-hidden="true"></div>
+          <div class="feature-inner">
+            <div class="feature-head">
+              <div>
+                <h3 class="project-title">故事档案馆 · 第一卷《蓝血》</h3>
+                <span class="project-meta">01 / 知乎黑客松 · 队长 / AI 产品经理 · 【时间待补】</span>
+              </div>
+              <p class="feature-lead">
+                先写下你的判断，再走进现场——答案早就有了，问题是你敢不敢承认它和别人不一样。
+              </p>
+            </div>
+
+            <div class="case-metrics">
+              <span>队长 · 2 人团队</span>
+              <span>3 步核心玩法</span>
+              <span>大模型 NPC · 边界锁死</span>
+              <span>接入知乎 OAuth</span>
+            </div>
+
+            <details class="project-detail">
+              <summary>查看我的判断、动作与交付</summary>
+              <div>
+                <p><b>玩法三步：</b>先写下你的判断（进现场前就能写，之后可反复修改）→ 再看现场
+                  （关键线索和日常物件、故意做得相似的干扰项混在一起，不是每件东西都有用）→
+                  最后对照说法（每个人只知道自己经历的一部分，记不清、看错和刻意隐瞒是三件事）。</p>
+
+                <p><b>关键设计：</b>把结论前置——进门第一件事是答题而不是调查，"要不要改口"本身成为玩法；
+                  三个在场者由大模型实时对话，但认知边界被锁死，他们不撒谎、也不替玩家把话补全，
+                  难点因此从"抓谁说谎"变成"哪句话是被人为设计过的、哪句话只是被视角限制住了"。</p>
+
+                <p><b>平台与延展：</b>完整接入知乎 OAuth，站内结案记为"知乎登录用户结案"并可统计转化；
+                  产品命名为"档案馆"而不是《蓝血》——同一套引擎可继续接入知乎的其他内容形态，
+                  每一卷只需提供"谁在场、各自知道什么"的数据。</p>
+              </div>
+            </details>
+
+            <div class="project-links">
+              <a href="https://kanshan-archive-87534.app.workbuddy.host/" target="_blank" rel="noopener">在线体验（走进现场）↗</a>
+            </div>
+          </div>
+        </article>
+
         <article class="project reveal" id="case-youth">
           <div class="project-head">
             <h3 class="project-title">影视剧人物年轻化 · 从工作流到量产</h3>
-            <span class="project-meta">01 / 腾讯影视剧项目组 · AIGC 影视剧交付 · 2025.09—2026.01</span>
+            <span class="project-meta">02 / 腾讯影视剧项目组 · AIGC 影视剧交付 · 2025.09—2026.01</span>
           </div>
 
           <div class="project-grid">
@@ -317,7 +361,7 @@
         <article class="project reveal" id="case-cineva">
           <div class="project-head">
             <h3 class="project-title">Cineva · AI 短片创作 Agent</h3>
-            <span class="project-meta">02 / 独立项目 · AIGC 创作工作台 · 2026</span>
+            <span class="project-meta">03 / 独立项目 · AIGC 创作工作台 · 2026</span>
           </div>
 
           <div class="project-grid">
@@ -352,7 +396,7 @@
             </div>
 
             <div class="project-visual" aria-hidden="true">
-              <span class="visual-index">02</span>
+              <span class="visual-index">03</span>
             </div>
           </div>
         </article>
@@ -360,7 +404,7 @@
         <article class="project reveal" id="case-faxiaozhi">
           <div class="project-head">
             <h3 class="project-title">法小智 · 法律类案研究 Agent</h3>
-            <span class="project-meta">03 / To B · 法律垂直 Agent · 2026</span>
+            <span class="project-meta">04 / To B · 法律垂直 Agent · 2026</span>
           </div>
 
           <div class="project-grid">
@@ -394,7 +438,7 @@
             </div>
 
             <div class="project-visual" aria-hidden="true">
-              <span class="visual-index">03</span>
+              <span class="visual-index">04</span>
             </div>
           </div>
         </article>
@@ -402,7 +446,7 @@
         <article class="project reveal" id="case-shoe">
           <div class="project-head">
             <h3 class="project-title">款式工场 · 鞋服设计 Agent</h3>
-            <span class="project-meta">04 / To B · 设计流程 Agent · 2026</span>
+            <span class="project-meta">05 / To B · 设计流程 Agent · 2026</span>
           </div>
 
           <div class="project-grid">
@@ -436,7 +480,7 @@
             </div>
 
             <div class="project-visual" aria-hidden="true">
-              <span class="visual-index">04</span>
+              <span class="visual-index">05</span>
             </div>
           </div>
         </article>
