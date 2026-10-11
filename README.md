@@ -141,3 +141,35 @@ python3 -m http.server 8000
 
 > ⚠️ 这两个工作流页包含影视剧原始画面与人脸参考图，模型选型页包含项目内部评测数据。
 > 上线前请确认这些素材可以公开；如不能，改成打码版或撤掉链接。
+
+
+---
+
+## 七、备用部署：GitHub Pages 国内打不开怎么办
+
+`*.github.io` 在中国大陆经常被 DNS 污染或直接阻断（微信内置浏览器基本必定拦截），这不是站点问题。
+换 **Cloudflare Pages** 即可：`*.pages.dev` 在国内可直连（实测通过，同系列的自建隧道方案也是靠它做入口）。
+
+### 方式一：自己跑两条命令（推荐，不用把账号给任何人）
+
+```bash
+npm install -g wrangler          # 只需一次
+wrangler login                   # 浏览器里点一下授权
+cd personal-website              # 本目录
+wrangler pages deploy . --project-name=zhouxiang-portfolio
+```
+
+跑完会输出形如 `https://zhouxiang-portfolio.pages.dev` 的地址，国内可直接打开。
+之后每次更新内容，重复最后一条命令即可（会把整站重新上传，含 6MB 的工作流页）。
+
+### 方式二：交给 AI 助手部署
+
+准备一枚 Cloudflare API Token（My Profile → API Tokens → Create Token → 模板选
+**Edit Cloudflare Workers**，或自定义权限 `Account → Cloudflare Pages → Edit`），
+把 Token 和 Account ID 给助手，由助手调用 wrangler 部署。用完可以立刻吊销这枚 Token。
+
+### 想绑定自己的域名
+
+Cloudflare Pages → 项目 → Custom domains → 添加域名，按提示在域名商处改 DNS。
+注意：即使绑了自有域名，只要还走 Cloudflare 的海外节点，稳定性与是否被墙仍取决于线路；
+如果面向国内访问且要求稳定，正规做法是「域名备案 + 国内对象存储/OSS 静态托管 + CDN」。
