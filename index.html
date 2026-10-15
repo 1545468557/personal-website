@@ -166,13 +166,13 @@
               从效果、可控性与成本效率几个维度给出可用结论，支撑平台的能力选型。</li>
             <li><b>主导多结果功能迭代：</b>针对"生成图片的多结果按钮是否保存"发起用户调研 →
               方案设计 → 上线测试，完成该按钮的优化迭代，并跟进上线后的数据表现。</li>
-            <li><b>结果：</b>多结果按钮使用率提升 18%，图片下载率从 42% 提升到 55%。</li>
+            <li><b>结果：</b>多结果按钮点击率从 42% 提升到 55%（相对提升 30%），图片下载率提高 18%。</li>
           </ul>
           <div class="case-metrics">
-            <span>使用率 +18%</span>
-            <span>下载率 42% → 55%</span>
+            <span>多结果点击率 42% → 55%</span>
+            <span>相对提升 30%</span>
+            <span>下载率 +18%</span>
             <span>100+ 人团队</span>
-            <span>滤镜投放验证</span>
           </div>
           <div class="project-links">
             <a href="https://a1.art" target="_blank" rel="noopener">A1.art ↗</a>
@@ -205,19 +205,52 @@
             <li><b>模型选型与验收：</b>按人像质量、提示词遵循、角色一致性、生态成熟度、推理效率五个维度加权评分，
               在 6 个候选底模中选定 FLUX.1 [dev]，并用 IP-Adapter + ControlNet + Mask 区域限定把帧间脸崩率
               从 30% 压到 5% 以下。</li>
-            <li><b>结果：</b>整体效率提升 200%，全片约 35 万帧在不增加人力的前提下满足项目交付节奏。</li>
+            <li><b>结果：</b>整体效率提升 200%，全片 356,499 帧（约 118.8 分钟）在不增加人力的前提下满足项目交付节奏，
+              单人力产能从 20 秒提升到 60 秒每人每天。</li>
           </ul>
           <div class="case-metrics">
             <span>效率 +200%</span>
             <span>32 节点工作流</span>
             <span>Mask 链路 10 节点</span>
-            <span>35 万帧</span>
+            <span>356,499 帧</span>
+            <span>产能 20 → 60 秒</span>
           </div>
           <div class="project-links">
             <a href="workflows/model-selection.html" target="_blank" rel="noopener">模型选型记录 ↗</a>
             <a href="workflows/portrait-workflow-nodes.html" target="_blank" rel="noopener">工作流节点说明 ↗</a>
             <a href="workflows/youth-portrait-workflow.html" target="_blank" rel="noopener">年轻化人像工作流 ↗</a>
             <a href="workflows/face-mask-workflow.html" target="_blank" rel="noopener">Mask 工作流 ↗</a>
+          </div>
+        </article>
+
+        <article class="experience-card reveal">
+          <div class="experience-top">
+            <div>
+              <h3>安徽深蓝律师事务所</h3>
+              <span class="role-label">律师助理 · 合同审查平台（0 → 1 独立搭建）</span>
+            </div>
+            <span class="period">2025.06 — 2025.08</span>
+          </div>
+          <p>
+            在律所实习期间发现合同审查耗时且易漏关键内容，结合自身 AI coding 能力提出平台方案，
+            独立完成需求拆解、产品设计与功能实现，做出上传合同 → 大模型分析 → 风险条款识别 → 报告生成的完整闭环。
+          </p>
+          <ul class="bullet-list">
+            <li><b>需求洞察与产品定义：</b>在律所实习中发现合同审查耗时且易漏关键内容，
+              结合自身 AI coding 能力提出合同审查平台方案，独立完成需求拆解与产品设计，
+              把律师的工作痛点转化为可执行的功能方案。</li>
+            <li><b>全链路搭建与功能落地：</b>独立负责从需求拆解、产品设计到功能跑通的完整链路，
+              实现上传合同、大模型读取分析、风险条款识别与审查报告生成的闭环功能模块。</li>
+            <li><b>幻觉率优化与知识库建设：</b>搭建基于 Dify 的合同知识库，将律所沉淀的审查要点与常用合同模板统一入库；
+              大模型先检索知识库、再结合合同内容判断，每条风险标注引用来源，显著降低大模型幻觉。</li>
+            <li><b>合规边界与能力扩展：</b>因客户隐私保密要求，平台不上线、仅律所内部使用；
+              接入阿里 OCR API 实现图片转 PDF 入库，扩展知识库供给来源，交付后由律所自行维护迭代。</li>
+          </ul>
+          <div class="case-metrics">
+            <span>0 → 1 独立搭建</span>
+            <span>Dify 合同知识库</span>
+            <span>风险条款 + 引用来源</span>
+            <span>仅内部使用</span>
           </div>
         </article>
 
@@ -315,13 +348,13 @@
           <div class="project-grid">
             <div class="project-body">
               <p>
-                影视剧里主要演员需要做年轻化处理，全片约 35 万帧。效果本身能跑通，但量太大：
+                影视剧里主要演员需要做年轻化处理，全片 356,499 帧（约 118.8 分钟）。效果本身能跑通，但量太大：
                 逐帧人工处理扛不住固定排期，人力成本有限，项目难以如期交付。
               </p>
 
               <div class="case-metrics">
                 <span>效率 +200%</span>
-                <span>35 万帧排期</span>
+                <span>356,499 帧排期</span>
                 <span>帧间脸崩率 30% → 5%</span>
                 <span>32 节点工作流</span>
               </div>
@@ -345,7 +378,7 @@
                     不需要理解 CLIP 层数或 ControlNet 强度。平台支持按项目 / 上传人 / 状态筛选、批量下载，
                     生成失败的任务可以一键重新生成并查看参数。</p>
                   <p><b>结果与复盘：</b>整体效率提升 200%，在不增加人力的前提下满足项目交付节奏。
-                    Mask 只跑人脸区域（压缩到原图 1/4 面积）配合夜间批量处理，35 万帧可以在排期内完成。
+                    Mask 只跑人脸区域（压缩到原图 1/4 面积）配合夜间批量处理，356,499 帧可以在排期内完成。
                     复盘：提效的前提是先把效果标准定死，否则省下来的时间会花在返工上。</p>
 
                   <figure class="project-figure project-figure--narrow">
