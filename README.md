@@ -15,7 +15,7 @@ personal-website/
 │   ├── js/main.js                 ← 导航、动画、雨效、手风琴
 │   └── img/
 │       ├── favicon.svg            ← 浏览器标签页图标
-│       └── qr-placeholder.svg     ← 二维码占位图（换成你自己的）
+│       └── wechat-mp-qr.jpg       ← 微信公众号二维码（换图直接覆盖这个文件）
 ├── .nojekyll                      ← 让 GitHub Pages 不做 Jekyll 处理，保留原样
 └── README.md
 ```
@@ -47,7 +47,7 @@ python3 -m http.server 8000
 | 工作经历 `#experience` | 每张卡片：公司、职位、时间、要点列表 | 复制整段 `<article class="experience-card reveal">` 新增一段 |
 | 项目作品 `#projects` | 每个案例：标题、类型、背景、指标、折叠详情、链接 | 复制整个 `<article class="project reveal">` 新增一个案例 |
 | 方法沉淀 `#notes` | 每条方法：标题、一句话说明、展开内容 | 复制整个 `<article class="note reveal">` 新增一条 |
-| 联系 `#contact` | 邮箱、电话、GitHub、二维码图片 | 二维码图放 `assets/img/`，再改 `<img src>` |
+| 联系 `#contact` | 邮箱、GitHub、微信公众号二维码 | 二维码直接覆盖 `assets/img/wechat-mp-qr.jpg`（改文件名则需同步改 `<img src>`） |
 | 页脚 | 姓名 | 年份由 JS 自动填当前年份 |
 
 **几个小提示**
