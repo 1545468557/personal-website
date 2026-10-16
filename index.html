@@ -216,6 +216,8 @@
             <span>产能 20 → 60 秒</span>
           </div>
           <div class="project-links">
+            <a href="assets/img/platform-task-list.png" target="_blank" rel="noopener">平台截图 ↗</a>
+            <a href="assets/img/platform-ai-portrait-form.png" target="_blank" rel="noopener">提交表单截图 ↗</a>
             <a href="workflows/model-selection.html" target="_blank" rel="noopener">模型选型记录 ↗</a>
             <a href="workflows/portrait-workflow-nodes.html" target="_blank" rel="noopener">工作流节点说明 ↗</a>
             <a href="workflows/youth-portrait-workflow.html" target="_blank" rel="noopener">年轻化人像工作流 ↗</a>
@@ -400,88 +402,10 @@
           </div>
         </article>
 
-        <article class="project reveal" id="case-youth">
-          <div class="project-head">
-            <h3 class="project-title">影视剧人物年轻化 · 从工作流到量产</h3>
-            <span class="project-meta">03 / 腾讯影视剧项目组 · AIGC 影视剧交付 · 2025.09—2026.01</span>
-          </div>
-
-          <div class="project-grid">
-            <div class="project-body">
-              <p>
-                影视剧里主要演员需要做年轻化处理，全片 356,499 帧（约 118.8 分钟）。效果本身能跑通，但量太大：
-                逐帧人工处理扛不住固定排期，人力成本有限，项目难以如期交付。
-              </p>
-
-              <div class="case-metrics">
-                <span>效率 +200%</span>
-                <span>356,499 帧排期</span>
-                <span>帧间脸崩率 30% → 5%</span>
-                <span>32 节点工作流</span>
-              </div>
-
-              <details class="project-detail">
-                <summary>查看我的判断、动作与交付</summary>
-                <div>
-                  <p><b>问题定义：</b>先做单点 demo 把效果验证出来，再盘点真实工作量——瓶颈不在"能不能生成"，
-                    而在"量太大、人工环节太多"。于是把目标从"做一个好效果"改成"把产能做出来"。</p>
-                  <p><b>模型选型：</b>按人像质量 30%、提示词遵循 25%、角色一致性 20%、生态成熟度 15%、
-                    推理效率 10% 五个维度加权，对 6 个候选模型打分（FLUX.1 [dev] 8.2 分最高，高于
-                    FLUX.1 [schnell] 7.8、Qwen-Image 7.3、SDXL 6.4）。选 FLUX.1 [dev] 的同时补它的短板：
-                    用 IP-Adapter 保身份 + ControlNet 线稿约束 + Mask 区域限定，把帧间脸崩率从 SDXL 的
-                    30% 压到 5% 以下。</p>
-                  <p><b>三条提效线：</b>① 达芬奇批量加去背景，把重复的合成动作批量化；
-                    ② 用 AI 自动提取人脸 ID 打 mask（SAM2 自动分割 → 裁剪视频人脸 → MorphFace 人脸变形 →
-                    合成遮罩 → ProRes 合并），替代逐帧手绘；
-                    ③ 把工作流封装成平台，让非技术同事也能跑，减少对个人操作的依赖。</p>
-                  <p><b>把工作流交给别人跑：</b>把工作流封装成平台上的「AI 人像编辑」入口——同事只需要选项目、
-                    上传文件夹、选"男性 / 女性年轻化"这类美化参数就能提交任务，推理尺寸与噪声强度都固化成默认值，
-                    不需要理解 CLIP 层数或 ControlNet 强度。平台支持按项目 / 上传人 / 状态筛选、批量下载，
-                    生成失败的任务可以一键重新生成并查看参数。</p>
-                  <p><b>结果与复盘：</b>整体效率提升 200%，在不增加人力的前提下满足项目交付节奏。
-                    Mask 只跑人脸区域（压缩到原图 1/4 面积）配合夜间批量处理，356,499 帧可以在排期内完成。
-                    复盘：提效的前提是先把效果标准定死，否则省下来的时间会花在返工上。</p>
-
-                  <figure class="project-figure project-figure--narrow">
-                    <img src="assets/img/platform-ai-portrait-form.png" alt="平台上的 AI 人像编辑表单：选择项目、勾选文件夹上传、选择美化工作流与美化参数、设置推理尺寸与噪声强度" loading="lazy">
-                    <figcaption>
-                      封装成平台后的提交入口：同事只需选项目、上传文件夹、选"男性 / 女性年轻化"这类美化参数；
-                      推理尺寸（2048×1152）与噪声强度（15，范围 8–15）固化为默认值，基本不需要调整。
-                    </figcaption>
-                  </figure>
-
-                  <figure class="project-figure">
-                    <img src="assets/img/platform-task-list.png" alt="平台任务列表：按项目、上传人、生成状态与时间筛选，支持批量下载，失败任务可重新生成并查看参数" loading="lazy">
-                    <figcaption>
-                      工作流封装成平台后的任务列表：按项目 / 上传人 / 生成状态 / 上传时间筛选，支持批量下载（文件名与本地保持一致），
-                      生成失败的视频可点击"重新生成"并查看参数。<br>
-                      截图已脱敏：顶栏内部提示与账号已裁掉，上传人姓名已打码。
-                    </figcaption>
-                  </figure>
-                </div>
-              </details>
-
-              <div class="project-links">
-                <a href="workflows/youth-portrait-workflow.html" target="_blank" rel="noopener">年轻化人像工作流（32 节点）↗</a>
-                <a href="workflows/face-mask-workflow.html" target="_blank" rel="noopener">Mask 工作流（10 节点）↗</a>
-                <a href="workflows/model-selection.html" target="_blank" rel="noopener">模型选型记录 ↗</a>
-                <a href="workflows/portrait-workflow-nodes.html" target="_blank" rel="noopener">工作流节点说明 ↗</a>
-              </div>
-              <div class="project-links">
-                <span class="project-note">影视剧素材未公开 · 截图与工作流为脱敏展示版</span>
-              </div>
-            </div>
-
-            <div class="project-visual project-visual--shot">
-              <img src="assets/img/platform-task-list.png" alt="平台上封装好的 AI 人像编辑任务列表：按项目、上传人、生成状态筛选，支持批量下载与失败重跑" loading="lazy">
-            </div>
-          </div>
-        </article>
-
         <article class="project reveal" id="case-cineva">
           <div class="project-head">
             <h3 class="project-title">Cineva · AI 短片创作 Agent</h3>
-            <span class="project-meta">04 / 独立项目 · AIGC 创作工作台 · 2026</span>
+            <span class="project-meta">03 / 独立项目 · AIGC 创作工作台 · 2026</span>
           </div>
 
           <div class="project-grid">
@@ -524,7 +448,7 @@
         <article class="project reveal" id="case-faxiaozhi">
           <div class="project-head">
             <h3 class="project-title">法小智 · 法律类案研究 Agent</h3>
-            <span class="project-meta">05 / To B · 法律垂直 Agent · 2026</span>
+            <span class="project-meta">04 / To B · 法律垂直 Agent · 2026</span>
           </div>
 
           <div class="project-grid">
@@ -566,7 +490,7 @@
         <article class="project reveal" id="case-omniharness">
           <div class="project-head">
             <h3 class="project-title">OmniHarness · Super Agent 框架</h3>
-            <span class="project-meta">06 / 开源项目 · Agent 框架 · 2026</span>
+            <span class="project-meta">05 / 开源项目 · Agent 框架 · 2026</span>
           </div>
 
           <div class="project-grid">
