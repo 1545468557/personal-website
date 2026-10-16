@@ -617,6 +617,41 @@ html.effects-off .grad { animation: none; }
 }
 .resource-card:hover h3 { color: var(--color-saffron); }
 
+/* 一张卡里放两个入口（源码 / 在线体验）：
+   整卡不再是 <a>，改由 .resource-card-main 铺满做主链接，
+   .resource-card-extra 浮在同一层但 z-index 更高，所以能被单独点到。 */
+.resource-card-split { padding: 0; }
+.resource-card-split .resource-card-main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  padding: 26px 26px 0;
+  color: inherit;
+  text-decoration: none;
+}
+.resource-card-extra {
+  position: relative;
+  z-index: 2;
+  align-self: flex-start;
+  margin: 0 26px 26px;
+  padding: 5px 12px;
+  border: 1px solid var(--color-iris);
+  border-radius: 999px;
+  background: rgba(128, 82, 255, 0.12);
+  color: #d0bcff;
+  font-size: 12px;
+  line-height: 1.6;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.resource-card-extra:hover {
+  background: rgba(128, 82, 255, 0.28);
+  border-color: var(--color-saffron);
+  color: var(--color-saffron);
+}
+
 /* ---------- 方法沉淀（手风琴） ---------- */
 .note-list { border-top: 1px solid var(--color-line); }
 
