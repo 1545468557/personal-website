@@ -501,6 +501,58 @@
             </div>
           </div>
         </article>
+
+        <article class="project reveal" id="case-omniharness">
+          <div class="project-head">
+            <h3 class="project-title">OmniHarness · Super Agent 框架</h3>
+            <span class="project-meta">05 / 开源项目 · Agent 框架 · 2026</span>
+          </div>
+
+          <div class="project-grid">
+            <div class="project-body">
+              <p>
+                通用 Agent 要真正跑长任务，光有模型不够：得有地方执行代码、记得住上下文、能挂工具，
+                还得把复杂任务拆开并行做。OmniHarness 把这些组织成一个可扩展的框架。
+              </p>
+
+              <div class="case-metrics">
+                <span>子智能体编排</span>
+                <span>Docker 沙箱执行</span>
+                <span>持久记忆</span>
+                <span>可扩展技能</span>
+              </div>
+
+              <details class="project-detail">
+                <summary>查看框架能力与运行方式</summary>
+                <div>
+                  <p><b>子智能体编排：</b>把一个大任务拆成多个子智能体分头执行再汇总，
+                    适合耗时从几分钟到几小时不等的任务；主流程负责调度与结果整合。</p>
+
+                  <p><b>沙箱执行环境：</b>给 Agent 一个"自己的电脑"——可在隔离的 Docker 容器里执行命令、
+                    管理文件、跑长时间任务。推荐用 All-in-One Sandbox，把浏览器、Shell、文件系统、
+                    MCP 与 VSCode Server 合并进单个容器，做到隔离、安全、可持久、可挂载文件系统。</p>
+
+                  <p><b>持久记忆：</b>跨会话保留上下文，让长任务不必每轮重新建立背景。</p>
+
+                  <p><b>渐进式技能加载：</b>技能按需加载——只加载当前这一步需要的，避免一次性把所有能力塞进上下文。
+                    既可以扩展自己的技能文件，也可以直接用内置技能库。</p>
+
+                  <p><b>技术组成：</b>后端 Python 3.12+，前端 Node.js 22+，MIT 协议开源；
+                    提供 Docker 部署与 Makefile 一键流程，文档含中、英、日、法、俄多语言版本。</p>
+                </div>
+              </details>
+
+              <div class="project-links">
+                <a href="https://omni-harness-nu.vercel.app/" target="_blank" rel="noopener">在线体验 ↗</a>
+                <a href="https://github.com/1545468557/omni-harness" target="_blank" rel="noopener">开源代码 ↗</a>
+              </div>
+            </div>
+
+            <div class="project-visual project-visual--shot">
+              <img src="assets/img/omni-harness.png" alt="OmniHarness 官网首页：暗色星空背景下的品牌标识与「分析数据 超级特工」标语" loading="lazy">
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -553,17 +605,29 @@
           <span class="resource-meta"><em>Three.js</em><em>可视化</em></span>
         </a>
 
-        <a class="resource-card reveal" href="https://1545468557.github.io/personal-website/index.html#projects" target="_blank" rel="noopener">
-          <h3>前线指令</h3>
-          <p>开源像素回合制战棋，支持单人对战与局域网联机。</p>
-          <span class="resource-meta"><em>JavaScript</em><em>游戏</em></span>
-        </a>
+        <div class="resource-card resource-card-split reveal">
+          <a class="resource-card-main" href="https://github.com/1545468557/field-command" target="_blank" rel="noopener">
+            <h3>前线指令</h3>
+            <p>开源像素回合制战棋，支持单人对战与局域网联机。</p>
+            <span class="resource-meta"><em>JavaScript</em><em>游戏</em></span>
+          </a>
+          <a class="resource-card-extra" href="https://github.com/1545468557/field-command#开始游戏" target="_blank" rel="noopener">运行说明 ↗</a>
+        </div>
 
         <a class="resource-card reveal" href="https://github.com/1545468557/CodexFloat" target="_blank" rel="noopener">
           <h3>CodexFloat</h3>
           <p>隐私优先的 macOS 原生助手，查看 Codex 额度、重置活动与任务状态。</p>
           <span class="resource-meta"><em>Swift</em><em>macOS</em></span>
         </a>
+
+        <div class="resource-card resource-card-split reveal">
+          <a class="resource-card-main" href="https://omni-harness-nu.vercel.app/" target="_blank" rel="noopener">
+            <h3>OmniHarness</h3>
+            <p>开源的 Super Agent 框架：子智能体编排、Docker 沙箱执行、持久记忆与渐进式技能加载。</p>
+            <span class="resource-meta"><em>Python</em><em>Agent</em><em>MIT</em><em>在线体验 ↗</em></span>
+          </a>
+          <a class="resource-card-extra" href="https://github.com/1545468557/omni-harness" target="_blank" rel="noopener">开源代码 ↗</a>
+        </div>
 
         <a class="resource-card reveal" href="https://pet-name-studio.vercel.app" target="_blank" rel="noopener">
           <h3>宠物起名事务所</h3>
