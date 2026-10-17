@@ -413,6 +413,59 @@ html.effects-off .grad { animation: none; }
 .about-item h3 { font-size: 17px; font-weight: 500; margin-bottom: 8px; }
 .about-item p { font-size: 15px; color: var(--color-ash); line-height: 1.8; margin: 0; }
 
+/* ---------- 活动照片墙 ---------- */
+.photo-wall-title {
+  margin-top: 44px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-line);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ash);
+}
+.photo-wall {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+}
+.photo-wall figure {
+  margin: 0;
+  border: 1px solid var(--color-line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0a0a0e;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.photo-wall figure:hover {
+  border-color: rgba(128, 82, 255, 0.55);
+  transform: translateY(-3px);
+}
+.photo-wall img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.photo-wall figcaption {
+  padding: 12px 14px 14px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--color-ash);
+}
+.photo-wall figcaption b { color: var(--color-silver); font-weight: 500; }
+.photo-wall figcaption span { display: block; font-size: 12px; color: #7c7c85; margin-top: 2px; }
+
+.photo-wall-note {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--color-ash);
+  line-height: 1.7;
+}
+.photo-wall-note a { color: var(--color-saffron); text-decoration: none; }
+.photo-wall-note a:hover { text-decoration: underline; }
+.photo-wall-note b { color: var(--color-silver); font-weight: 500; }
+
 /* ---------- 工作经历 ---------- */
 .timeline { display: grid; gap: 22px; }
 
