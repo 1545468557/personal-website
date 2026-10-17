@@ -740,14 +740,19 @@
           <button class="note-head" aria-expanded="false">
             <span class="note-index">03</span>
             <span class="note-title">
-              <strong>【方法名称】</strong>
-              <em>【一句话说明】</em>
+              <strong>让 AI 的结论可追溯：先落知识，再标出处</strong>
+              <em>交付场景里，"模型说得对"不算证据，能指回原文才算</em>
             </span>
             <span class="note-toggle" aria-hidden="true"></span>
           </button>
           <div class="note-content">
             <div>
-              <p>【展开后的内容。】</p>
+              <p><b>步骤：</b>把散落的规则沉淀成知识库（审查要点、合同模板、景区宠物政策）→ 先检索再让模型判断
+                → 每条结论标注引用来源 → 来源冲突或证据不足时交人工裁决。</p>
+              <p><b>核心约束：</b>没有出处的结论不进最终交付；宁可标"待核验"，也不拿推测当答案。
+                AI 负责找和比，人负责拍板。</p>
+              <p><b>适用边界：</b>适合合同审查、合规问答、政策咨询这类"说错要担责"的场景；
+                开放式创意生成不需要这么重的证据链。</p>
             </div>
           </div>
         </article>
@@ -756,14 +761,20 @@
           <button class="note-head" aria-expanded="false">
             <span class="note-index">04</span>
             <span class="note-title">
-              <strong>【方法名称】</strong>
-              <em>【一句话说明】</em>
+              <strong>模型选型：先定通过条件，再看分数</strong>
+              <em>评测集不来自榜单，来自真实用户会怎么输入</em>
             </span>
             <span class="note-toggle" aria-hidden="true"></span>
           </button>
           <div class="note-content">
             <div>
-              <p>【展开后的内容。】</p>
+              <p><b>步骤：</b>定任务与交付标准 → 拆成可打分的维度（效果、一致性、成本、效率）→
+                用真实 bad case 构评测集（侧脸、遮挡、模糊这类真实输入）→ 逐项打分 →
+                用"通过条件"而不是平均分做决策。</p>
+              <p><b>核心约束：</b>先定标准再跑分，避免"跑完再找理由"；每个失败案例必须对应一条优化建议，
+                否则这次评测没有产出。</p>
+              <p><b>适用边界：</b>适合有明确验收要求的选型；纯探索阶段不必先建评测体系，
+                先跑通再补标准。</p>
             </div>
           </div>
         </article>
