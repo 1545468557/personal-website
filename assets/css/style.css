@@ -413,58 +413,53 @@ html.effects-off .grad { animation: none; }
 .about-item h3 { font-size: 17px; font-weight: 500; margin-bottom: 8px; }
 .about-item p { font-size: 15px; color: var(--color-ash); line-height: 1.8; margin: 0; }
 
-/* ---------- 分享交流（活动照片集中展示） ---------- */
-.talk-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 22px;
+/* ---------- 分享交流（错落照片墙） ---------- */
+.talk-wall {
+  columns: 3;
+  column-gap: 18px;
 }
-.talk-card {
-  display: flex;
-  flex-direction: column;
+@media (max-width: 1000px) { .talk-wall { columns: 2; } }
+@media (max-width: 640px)  { .talk-wall { columns: 1; } }
+
+.talk-item {
+  break-inside: avoid;
+  margin: 0 0 18px;
   border: 1px solid var(--color-line);
-  border-radius: 16px;
+  border-radius: 14px;
   overflow: hidden;
   background: var(--color-surface);
-  transition: border-color 0.25s ease, transform 0.25s ease;
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform 0.3s cubic-bezier(.2,.7,.3,1), border-color 0.3s ease, box-shadow 0.3s ease;
 }
-.talk-card:hover {
+.talk-item:nth-child(3n+1) { --tilt: -0.9deg; }
+.talk-item:nth-child(3n+2) { --tilt: 0.7deg; }
+.talk-item:nth-child(3n+3) { --tilt: -0.4deg; }
+.talk-item:hover {
+  transform: rotate(0deg) translateY(-4px);
   border-color: rgba(128, 82, 255, 0.55);
-  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.9);
 }
-.talk-shot { display: block; position: relative; overflow: hidden; }
-.talk-shot img {
+.talk-item a { display: block; }
+.talk-item img {
   display: block;
   width: 100%;
-  height: 230px;
+  height: auto;
+  max-height: 360px;
   object-fit: cover;
-  transition: transform 0.35s ease;
+  object-position: top center;
 }
-.talk-card:hover .talk-shot img { transform: scale(1.03); }
-.talk-shot::after {
-  content: "查看原图 ↗";
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  font-size: 11.5px;
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-  padding: 3px 9px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
+.talk-item figcaption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 12px 10px;
+  font-size: 12.5px;
+  color: var(--color-ash);
 }
-.talk-card:hover .talk-shot::after { opacity: 1; }
-.talk-body { padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 6px; }
-.talk-meta {
-  font-size: 11.5px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-saffron);
-}
-.talk-card h3 { font-size: 16.5px; font-weight: 500; line-height: 1.4; }
-.talk-card p { font-size: 14px; color: var(--color-ash); line-height: 1.75; margin: 0; }
+.talk-item figcaption span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.talk-item figcaption em { font-style: normal; color: #6f6f78; flex: 0 0 auto; font-size: 12px; }
+
 .talk-note { margin-top: 22px; font-size: 13px; color: var(--color-ash); line-height: 1.7; }
 .talk-note a { color: var(--color-saffron); text-decoration: none; }
 .talk-note a:hover { text-decoration: underline; }
